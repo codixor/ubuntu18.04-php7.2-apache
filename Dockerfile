@@ -56,6 +56,8 @@ COPY typo3.conf /etc/apache2/sites-available/
 RUN a2dissite 000-default
 RUN a2ensite typo3.conf
 
+COPY sysctl.conf /etc/
+
 EXPOSE 80 443
 
 WORKDIR /var/www/html
